@@ -62,39 +62,43 @@ const contenidoRegistro = () => {
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
-      {({ isSubmitting }) => (
-        <Form>
-          <Field type="text" name="nombres" placeholder="Nombres" />
-          <ErrorMessage name="nombres" component="div" className="error-message" />
-
-          <Field type="text" name="apellidos" placeholder="Apellidos" />
+        {formik => (
+          <Form className="formulario">
+            <h2 className='contenedor'>Registrarse</h2>
+            <div className="form-group">
+            <Field name="nombres" placeholder="Nombres" className="form-field" />
+              <ErrorMessage name="nombres" component="div" className="error-message" />
+            </div> <div className="form-group">
+            <Field type="text" name="apellidos" placeholder="Apellidos" className="form-field" />
           <ErrorMessage name="apellidos" component="div" className="error-message" />
-
-          <Field type="date" name="fechaNacimiento" placeholder="Fecha de nacimiento" />
+          </div> <div className="form-group">
+          <Field type="date" name="fechaNacimiento" placeholder="Fecha de nacimiento" className="form-field" />
           <ErrorMessage name="fechaNacimiento" component="div" className="error-message" />
-
-          <Field type="email" name="email" placeholder="Correo electrónico" />
+          </div> <div className="form-group">
+          <Field type="email" name="email" placeholder="Correo electrónico" className="form-field" />
           <ErrorMessage name="email" component="div" className="error-message" />
-
-          <Field type="password" name="pass" placeholder="Contraseña" />
+          </div> <div className="form-group">
+          <Field type="password" name="pass" placeholder="Contraseña" className="form-field"/>
           <ErrorMessage name="password" component="div" className="error-message" />
-
-          <Field type="password" name="confirmPass" placeholder="Confirmar Contraseña" />
+          </div> <div className="form-group">
+          <Field type="password" name="confirmPass" placeholder="Confirmar Contraseña " className="form-field"/>
           <ErrorMessage name="confirmPassword" component="div" className="error-message" />
-
-          <Field type="tel" name="telefono" placeholder="Teléfono" />
+          </div> <div className="form-group">
+          <Field type="tel" name="telefono" placeholder="Teléfono" className="form-field"/>
           <ErrorMessage name="telefono" component="div" className="error-message" />
-
-          <Field as="select" name="tipoDeUsuario">
+          </div> <div className="form-group">
+          <Field as="select" name="tipoDeUsuario" className="form-field">
             <option value="">Seleccione un tipo de usuario</option>
             <option value="Candidato">Candidato</option>
             <option value="Reclutador">Reclutador</option>
           </Field>
           <ErrorMessage name="tipoDeUsuario" component="div" className="error-message" />
-
-          <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Enviando...' : 'Registrarse'}
-          </button>
+          </div>
+          <div className="form-group">
+            <button type="submit" disabled={formik.isSubmitting} className="form-button">
+              {formik.isSubmitting ? 'Enviando...' : 'Registrarse'}
+            </button>
+          </div>
         </Form>
       )}
     </Formik>

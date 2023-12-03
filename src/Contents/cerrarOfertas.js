@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 const CerrarOfertas = () => {
   const [ofertasCerradas, setOfertasCerradas] = useState([]);
@@ -32,14 +33,14 @@ const CerrarOfertas = () => {
   };
 
   return (
-    <div>
-      <h2>Ofertas Cerradas</h2>
-      <table>
-        <thead>
+    <div className="container mt-5">
+      <h2 className="text-center mb-4">Ofertas Cerradas</h2>
+      <table className="table table-hover">
+        <thead className="thead-dark">
           <tr>
             <th>Título de la Vacante</th>
             <th>Nombre y Apellido del Candidato Reclutado</th>
-            <th>Cerrar</th>
+            <th>Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -48,7 +49,12 @@ const CerrarOfertas = () => {
               <td>{oferta.tituloVacante}</td>
               <td>{oferta.nombreApellido}</td>
               <td>
-                <button onClick={() => handleCerrarOferta(oferta.id)}>Cerrar</button>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleCerrarOferta(oferta.id)}
+                >
+                  Cerrar
+                </button>
               </td>
             </tr>
           ))}

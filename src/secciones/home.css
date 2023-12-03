@@ -1,73 +1,70 @@
-.home {
-  width: 100%;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-}
+  /* home.css */
+  .home {
+    width: 100%;
+  }
 
-.home header {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-}
+  .home-header {
+    background-color: #000000;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
 
-.home header h2 {
-  font-size: 3em;
+  .home-logo {
+    max-width: 200px; /* Adjust the logo size as needed */
+    height: auto;
+  }
 
-}
+  .hero-section {
+    text-align: center;
+    padding: 50px 0;
+  }
 
-.home header nav {
-  display: flex;
-  justify-content: space-between;
-  
-}
+  .hero-title {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+  }
 
-.home header nav a {
-  padding: 10px;
-  text-decoration: none;
-  color: #ffffff;
-}
+  .hero-description {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+  }
 
-.home main {
-  flex: 1;
-}
+  .about-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
 
-.home main section {
-  padding: 20px;
-}
+  .home-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+  }
 
-.home main section h2 {
-  font-size: 2em;
-}
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #0056b3; /* Adjust the button color as needed */
+    color: white;
+  }
 
-.home main section p {
-  font-size: 1em;
-}
+  .btn-primary:hover {
+    background-color: #003d82;
+  }
 
-.home main section p strong {
-  font-weight: bold;
-}
-
-.home main section p a {
-  color: #000000;
-}
-
-.home footer {
-  background-color: #000000;
-  color: #ffffff;
-  padding: 20px;
-  text-align: center;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-container img {
-  width: 100%; /* Esto ajustará la imagen al ancho del contenedor */
-  height: auto; /* Esto mantendrá la proporción original de la imagen */
-}
+  /* Responsive design adjustments */
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: 30px 0;
+    }
+    .hero-title {
+      font-size: 2em;
+    }
+    .hero-description {
+      font-size: 1em;
+    }
+  }

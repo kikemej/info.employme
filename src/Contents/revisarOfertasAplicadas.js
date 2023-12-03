@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './buscarOfertas.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 const RevisarOfertasAplicadas = () => {
   const [vacantes, setVacantes] = useState([]);
@@ -16,10 +16,10 @@ const RevisarOfertasAplicadas = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Vacantes Abiertas</h2>
-      <table>
-        <thead>
+    <div className="container mt-5">
+      <h2 className="text-center mb-4">Vacantes Abiertas</h2>
+      <table className="table table-striped">
+        <thead className="thead-dark">
           <tr>
             <th>Título</th>
             <th>Descripción</th>
@@ -37,30 +37,10 @@ const RevisarOfertasAplicadas = () => {
               <td>{vacante.fechaPublicacion}</td>
               <td>
                 <button
+                  className="btn btn-primary"
                   type="button"
                   onClick={() => {
-                    
-                    const idCandidato = 2;
-                    const idVacante = 5;
-                    const idReclutador = 2;
-                    const data = {
-                      idCandidato,
-                      idVacante,
-                      idReclutador,
-                      Estado: 'Aplicada',
-                    };
-
-                    
-
-                    axios.post('http://localhost:5000/postulaciones/create', data)
-                      .then((res) => {
-                      console.log(res);
-                    })
-                    .catch((err) => {
-                      console.log(err);
-                    });
-
-                   
+                    // Postulation logic here
                   }}
                 >
                   Aplica
@@ -73,6 +53,5 @@ const RevisarOfertasAplicadas = () => {
     </div>
   );
 };
-
 
 export default RevisarOfertasAplicadas;

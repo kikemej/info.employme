@@ -12,16 +12,18 @@ import ReclutadorDashboard from "./components/ReclutadorDashboard";
 import CandidatoDashboard from "./components/CandidatoDashboard";
 import GeneralDashboard from './components/GeneralDashboard';
 import "./App.css";
+import logo from './img/Logoemplyme.png'; // Make sure to import the logo and provide the correct path
 
 
 
 const App = () => {
   return (
     <Router>
-      <div className="index">
-        <header>
+      <div className="app">
+        <header className="app-header">
+          <img src={logo} alt="Logo" className="app-logo" />
           <h2 className="title">Employme</h2>
-          <nav>
+          <nav className="app-nav">
             <a href="/Home" rel="home">
               Home
             </a>
@@ -50,7 +52,7 @@ const App = () => {
             <Route path="/dashboard/general" component={GeneralDashboard} />
           </Switch>
         </div>
-        <footer className="footer">
+        <footer className="app-footer">
           <p>&copy; 2023 Employme</p>
         </footer>
       </div>

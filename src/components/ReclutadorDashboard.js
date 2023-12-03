@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PublicarOferta from '../Contents/publicarOferta';
 import RevisarOfertasAplicadas from '../Contents/revisarOfertasAplicadas';
 import CerrarOfertas from '../Contents/cerrarOfertas';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 const ReclutadorDashboard = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -31,32 +32,25 @@ const ReclutadorDashboard = () => {
   };
 
   const handleCerrarSesion = () => {
-    // Implement logout logic here
-    // Redirecting to login page or dispatching a logout action
+window.location.href = '/login';
   };
 
    
   return (
-     <div className="dashboard-container">
-       <div className="opciones">
-         <h2>Reclutador</h2>
-         <button onClick={handlePublicarOferta}>Publicar Oferta</button>
-         <button onClick={handleRevisarOfertas}>Revisar ofertas aplicadas</button>
-         <button onClick={handleCerrarOfertas}>Cerrar ofertas</button>
-         {/* Otros botones */}
-         <button onClick={handleCerrarSesion}>Cerrar sesión</button>
-       </div>
-       <div className="contenido">
-         <div className="contenido-publicar-oferta">
-           {mostrarFormulario && (
-             <PublicarOferta onClose={handleCerrarFormulario} />
-           )}
-         </div>
-         {mostrarRevisarOfertas && <RevisarOfertasAplicadas />}
-         {mostrarCerrarOfertas && <CerrarOfertas />}
-         {/* Otro contenido */}
-       </div>
-     </div>
+    <div className="container mt-5">
+      <div className="d-flex flex-column align-items-center">
+        <h2>Reclutador</h2>
+        <div className="btn-group mb-3" role="group" aria-label="Basic example">
+          <button className="btn btn-outline-primary" onClick={handlePublicarOferta}>Publicar Oferta</button>
+          <button className="btn btn-outline-secondary" onClick={handleRevisarOfertas}>Revisar ofertas aplicadas</button>
+          <button className="btn btn-outline-success" onClick={handleCerrarOfertas}>Cerrar ofertas</button>
+          <button className="btn btn-outline-danger" onClick={handleCerrarSesion}>Cerrar sesión</button>
+        </div>
+        {mostrarFormulario && <PublicarOferta />}
+        {mostrarRevisarOfertas && <RevisarOfertasAplicadas />}
+        {mostrarCerrarOfertas && <CerrarOfertas />}
+      </div>
+    </div>
   );
 };
 

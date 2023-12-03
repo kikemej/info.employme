@@ -1,49 +1,81 @@
+/* registro.css */
 .contenedor {
   display: flex;
-  height: 30vh;
-}
-
-.opciones {
-  width: 15%;
-  background-color: #e6e6e6;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-.opciones ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.opciones li {
-  padding: 10px;
-}
-
-.opciones a {
-  text-decoration: none;
-  color: #000;
-}
-
-.opciones a:hover {
-  color: #ccc;
-}
-
-.contenido {
-  width: 85%;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  display: flex;
+  background: #ffffff;
   flex-direction: column;
   align-items: center;
+  padding: 1rem 0; /* Agrega padding superior e inferior */
+  font-family: 'Arial', sans-serif;
 }
 
-.oculto {
-  display: none;
+.registro-wrapper {
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px; /* Tamaño óptimo para formularios */
+  margin: 1rem auto;
 }
 
-/* Estilos para diferentes secciones */
-.registro {
-  display: block;
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente (si es necesario) */
+  margin-bottom: 1rem; /* Espaciado consistente entre campos */
+}
+
+.form-field {
+  width: 100%; /* Esto hará que todos los campos ocupen el mismo ancho */
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 0.5rem; /* Espacio después de cada campo */
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.85rem;
+  height: 1rem; /* Reserva espacio para evitar saltos de layout */
+  position: relative;
+  left: 0.25rem;
+}
+
+.form-button {
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #4CAF50; /* Nuevo color principal */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.form-button:hover,
+.form-button:focus {
+  background-color: #388E3C; /* Color más oscuro en hover/focus */
+  transform: scale(1.05); /* Ligera animación al pasar el cursor */
+}
+
+/* Mejoras en la visualización de errores */
+.error-message {
+  color: #FF5722; /* Más visible */
+}
+
+/* Estilos de campos con errores */
+.field-error {
+  border: 2px solid #FF5722; /* Borde rojo para campos con error */
+}
+
+@media (max-width: 768px) {
+  .registro-wrapper {
+    padding: 1rem; /* Padding más pequeño en móviles */
+  }
 }

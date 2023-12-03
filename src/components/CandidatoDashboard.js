@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CrearCV from "../Contents/CrearCV";
 import BuscarOfertas from "../Contents/buscarOfertas";
 import EstadoProcesos from "../Contents/estadoProcesos";
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 const CandidatoDashboard = () => {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
@@ -29,28 +30,27 @@ const CandidatoDashboard = () => {
   const handleCerrarFormulario = () => {
     setMostrarFormulario(false);
   };
+  const handleCerrarSesion = () => {
+   
+  };
 
-  return (
-    <div className="dashboard-container">
-      <div className="opciones">
-        <h2>Candidato:</h2>
-        <button onClick={handleCrearCV}>Crear CV</button>
-        <button onClick={handleBuscarOfertas}>Buscar ofertas</button>
-        <button onClick={handleEstadoProcesos}>Estado de procesos</button>
-        {/* Otros botones */}
-      </div>
-      <div className="contenido">
-        <div className="contenido-crear-cv">
-          {mostrarFormulario && (
-            <CrearCV onClose={handleCerrarFormulario} />
-          )}
-        </div>
-        {mostrarBuscarOfertas && <BuscarOfertas />}
-        {mostrarEstadoProcesos && <EstadoProcesos />}
-        {/* Otro contenido */}
-      </div>
+return (
+  <div className="container mt-5">
+    <h2 className="mb-4">Candidato:</h2>
+    <div className="btn-group mb-3" role="group">
+      <button className="btn btn-outline-primary" onClick={handleCrearCV}>Crear CV</button>
+      <button className="btn btn-outline-secondary" onClick={handleBuscarOfertas}>Buscar ofertas</button>
+      <button className="btn btn-outline-success" onClick={handleEstadoProcesos}>Estado de procesos</button>
+      <button className="btn btn-outline-danger" onClick={handleCerrarSesion}>Cerrar sesión</button>
+
     </div>
-  );
+    <div>
+      {mostrarFormulario && <CrearCV onClose={handleCerrarFormulario} />}
+      {mostrarBuscarOfertas && <BuscarOfertas />}
+      {mostrarEstadoProcesos && <EstadoProcesos />}
+    </div>
+  </div>
+);
 };
 
 export default CandidatoDashboard;

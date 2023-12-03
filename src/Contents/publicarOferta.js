@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 const PublicarOferta = () => {
   const validationSchema = Yup.object().shape({
@@ -48,25 +49,41 @@ const PublicarOferta = () => {
     >
       {({ isSubmitting }) => (
         <Form>
-          <Field type="text" name="titulo" placeholder="Título" />
-          <ErrorMessage name="titulo" component="div" className="error-message" />
+          <div className="mb-3">
+            <Field name="titulo" type="text" className="form-control" placeholder="Título" />
+            <ErrorMessage name="titulo" component="div" className="text-danger" />
+          </div>
 
-          <Field type="text" name="descripcion" placeholder="Descripción" />
-          <ErrorMessage name="descripcion" component="div" className="error-message" />
+          <div className="mb-3">
+            <Field name="descripcion" as="textarea" className="form-control" placeholder="Descripción" />
+            <ErrorMessage name="descripcion" component="div" className="text-danger" />
+          </div>
 
-          <Field type="number" name="salario" placeholder="Salario" />
-          <ErrorMessage name="salario" component="div" className="error-message" />
+          <div className="mb-3">
+            <Field name="salario" type="number" className="form-control" placeholder="Salario" />
+            <ErrorMessage name="salario" component="div" className="text-danger" />
+          </div>
 
-          <Field type="text" name="estado" placeholder="Estado (Abierto o Cerrado)" />
-          <ErrorMessage name="estado" component="div" className="error-message" />
+          <div className="mb-3">
+            <Field name="estado" as="select" className="form-select">
+              <option value="">Seleccionar estado</option>
+              <option value="Abierto">Abierto</option>
+              <option value="Cerrado">Cerrado</option>
+            </Field>
+            <ErrorMessage name="estado" component="div" className="text-danger" />
+          </div>
 
-          <Field type="date" name="fechaPublicacion" placeholder="Fecha de Publicación" />
-          <ErrorMessage name="fechaPublicacion" component="div" className="error-message" />
+          <div className="mb-3">
+            <Field name="fechaPublicacion" type="date" className="form-control" />
+            <ErrorMessage name="fechaPublicacion" component="div" className="text-danger" />
+          </div>
 
-          <Field type="date" name="fechaCierre" placeholder="Fecha de Cierre (opcional)" />
-          <ErrorMessage name="fechaCierre" component="div" className="error-message" />
+          <div className="mb-3">
+            <Field name="fechaCierre" type="date" className="form-control" />
+            <ErrorMessage name="fechaCierre" component="div" className="text-danger" />
+          </div>
 
-          <button type="submit" disabled={isSubmitting}>
+          <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
             {isSubmitting ? 'Enviando...' : 'Publicar'}
           </button>
         </Form>

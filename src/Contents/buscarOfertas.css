@@ -1,40 +1,50 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-bottom: 20px;
-  }
-  
-  th,
-  td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    font-size: 14px;
-  }
-  
-  th {
-    background-color: #f0f0f0;
-    text-align: center;
-  }
-  
-  td {
-    text-align: left;
-  }
-  
-  .titulo {
-    font-weight: bold;
-  }
-  
-  .descripcion {
-    font-size: 12px;
-  }
-  
-  .salario {
-    font-size: 16px;
-    color: #ff0000;
-  }
-  
-  .fecha {
-    font-size: 12px;
-  }
-  
+/* Add or replace your existing CSS with this */
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+}
+
+.table th,
+.table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+  color: #212529;
+  background-color: rgba(0, 0, 0, 0.075);
+}
+
+.thead-dark th {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #454d55;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0069d9;
+  border-color: #0062cc;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 const CrearCV = () => {
   const validationSchema = Yup.object().shape({
@@ -39,27 +40,33 @@ const CrearCV = () => {
         educacion: '',
         habilidades: '',
         perfilProfesional: '',
-
       }}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
     >
       {({ isSubmitting }) => (
         <Form>
+          <div className="mb-3">
+            <Field name="experiencia" type="text" className="form-control" placeholder="Experiencia" />
+            <ErrorMessage name="experiencia" component="div" className="text-danger" />
+          </div>
 
-          <Field type="text" name="experiencia" placeholder="Experiencia" />
-          <ErrorMessage name="experiencia" component="div" className="error-message" />
+          <div className="mb-3">
+            <Field name="educacion" type="text" className="form-control" placeholder="Educación" />
+            <ErrorMessage name="educacion" component="div" className="text-danger" />
+          </div>
 
-          <Field type="text" name="educacion" placeholder="Educación" />
-          <ErrorMessage name="educacion" component="div" className="error-message" />
+          <div className="mb-3">
+            <Field name="habilidades" type="text" className="form-control" placeholder="Habilidades" />
+            <ErrorMessage name="habilidades" component="div" className="text-danger" />
+          </div>
 
-          <Field type="text" name="habilidades" placeholder="Habilidades" />
-          <ErrorMessage name="habilidades" component="div" className="error-message" />
+          <div className="mb-3">
+            <Field name="perfilProfesional" type="text" className="form-control" placeholder="Perfil Profesional" />
+            <ErrorMessage name="perfilProfesional" component="div" className="text-danger" />
+          </div>
 
-          <Field type="text" name="perfilProfesional" placeholder="Perfil Profesional" />
-          <ErrorMessage name="perfilProfesional" component="div" className="error-message" />
-
-          <button type="submit" disabled={isSubmitting}>
+          <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
             {isSubmitting ? 'Enviando...' : 'Crear CV'}
           </button>
         </Form>

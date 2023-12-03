@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './buscarOfertas.css';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
 
 const BuscarOfertas = () => {
   const [vacantes, setVacantes] = useState([]);
@@ -16,10 +17,10 @@ const BuscarOfertas = () => {
   }, []);
 
   return (
-    <div>
-      <h2>Vacantes Abiertas</h2>
-      <table>
-        <thead>
+    <div className="container mt-5">
+      <h2 className="mb-4">Vacantes Abiertas</h2>
+      <table className="table">
+        <thead className="thead-dark">
           <tr>
             <th>Título</th>
             <th>Descripción</th>
@@ -37,6 +38,7 @@ const BuscarOfertas = () => {
               <td>{vacante.fechaPublicacion}</td>
               <td>
                 <button
+                  className="btn btn-primary"
                   type="button"
                   onClick={() => {
                     
