@@ -1,0 +1,40 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 20px;
+  }
+  
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
+  td {
+    text-align: left;
+  }
+  
+  .titulo {
+    font-weight: bold;
+  }
+  
+  .descripcion {
+    font-size: 12px;
+  }
+  
+  .salario {
+    font-size: 16px;
+    color: #ff0000;
+  }
+  
+  .fecha {
+    font-size: 12px;
+  }
+  
